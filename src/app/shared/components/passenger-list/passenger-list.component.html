@@ -1,0 +1,10 @@
+
+
+<h2>Total checked in : {{count}}/{{passengerList.length}}</h2>
+<ul class="list-group">
+    <li class="list-group-item"
+    *ngFor="let passenger of passengerList"
+    >
+       <strong>{{passenger.fullname}}</strong> 
+    </li>
+</ul>

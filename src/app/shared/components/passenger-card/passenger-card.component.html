@@ -1,0 +1,31 @@
+
+
+<div class="card mt-4">
+    <div class="card-header">
+        <input type="text" class="form-control" #control [value]="passengerCard.fullname">
+    </div>
+    <div class="card-body">
+        <strong>Total checked in :</strong>
+        {{passengerCard.checkInDate ? (passengerCard.checkInDate | date) : 'not checked in'}}
+        <p><strong>Children :</strong>{{passengerCard.children ? (passengerCard.children.length) : 0}}</p>
+    </div>
+    <div class="card-footer d-flex justify-content-between">
+        <button class="btn btn-outline-primary"
+        [ngClass]="{
+            'd-none' : isDisable
+        }"
+        (click)="onEdit()"
+        ><strong>Edit</strong></button>
+
+        <button class="btn btn-outline-warning"
+        [ngClass]="{
+            'd-none' : !isDisable
+        }"
+        (click)="onUpdate()"
+        ><strong>Update</strong></button>
+
+        <button class="btn btn-outline-danger"
+        (click)="onDelete()"
+        ><strong>Delete</strong></button>
+    </div>
+</div>
